@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #4a90e2;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            animation: slideDown 1s ease-in-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        section {
+            padding: 20px;
+            background: #1a1a1a;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+            background: #333;
+        }
+        .profile-image {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+            border: 3px solid #4a90e2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .profile-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255,255,255,0.5);
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #4a90e2;
+            color: #fff;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kunal Nathjogi</h1>
+        <p>Web Developer | Designer | Programmer</p>
+    </header>
+    <div class="container">
+        <section>
+            <h2>About Me</h2>
+            <img src="kunal.jpg" alt="Profile Image" class="profile-image">
+            <p>A passionate web developer with experience in building responsive and user-friendly websites.</p>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Portfolio Website</strong> - A personal portfolio to showcase my work.</li>
+                <li><strong>E-commerce Site</strong> - Developed an online store with a secure payment gateway.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <p>Email: kunalnathjogi18@gmail.com</p>
+            <p>Instagram: itz_._kunal_004</p>
+        </section>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Kunal . All Rights Reserved.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                section.style.opacity = "0";
+                section.style.transform = "translateY(20px)";
+            });
+            let delay = 0;
+            sections.forEach(section => {
+                setTimeout(() => {
+                    section.style.transition = "opacity 1s ease-in-out, transform 1s ease-in-out";
+                    section.style.opacity = "1";
+                    section.style.transform = "translateY(0)";
+                }, delay);
+                delay += 300;
+            });
+        });
+    </script>
+</body>
+</html>
